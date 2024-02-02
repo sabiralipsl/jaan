@@ -1,5 +1,5 @@
 #!/bin/bash
-# wget --no-check-certificate -qO- https://github.com/dOC4eVER/ubuntu20.04/raw/master/phpbuild.sh | bash -s
+# wget --no-check-certificate -qO- https://github.com/sabiralipsl/jaan/raw/master/phpbuild.sh | bash -s
 if [ -f "/home/xtreamcodes/iptv_xtream_codes/php-7.4.33" ]; then
     echo "update exists."
 else
@@ -35,7 +35,7 @@ elif [ -f /etc/os-release ]; then
     VER=$(uname -r)
 fi
 ARCH=$(uname -m)
-#wget https://github.com/dOC4eVER/ubuntu20.04/raw/master/install-dep.sh -O /root/depbuild.sh && bash /root/install-dep.sh
+#wget https://github.com/sabiralipsl/jaan/raw/master/install-dep.sh -O /root/depbuild.sh && bash /root/install-dep.sh
 if [[ "$OS" = "CentOs" && "$VER" = "6" && "$ARCH" == "x86_64" ]] ; then
 /opt/rh/devtoolset-9/enable
 source /opt/rh/devtoolset-9/enable
@@ -47,15 +47,15 @@ cd /root/phpbuild/
 rm -rf /root/phpbuild/ngx_http_geoip2_module
 rm -rf /root/phpbuild/nginx-1.24.0
 rm -rf /root/phpbuild/openssl-OpenSSL_1_1_1w
-wget https://github.com/openssl/openssl/archive/OpenSSL_1_1_1w.tar.gz -O /root/phpbuild/OpenSSL_1_1_1w.tar.gz
+wget https://github.com/sabiralipsl/jaan/releases/download/sabir/openssl-OpenSSL_1_1_1w.tar.gz -O /root/phpbuild/OpenSSL_1_1_1w.tar.gz
 tar -xzvf OpenSSL_1_1_1w.tar.gz
-wget http://nginx.org/download/nginx-1.24.0.tar.gz -O /root/phpbuild/nginx-1.24.0.tar.gz
+wget https://github.com/sabiralipsl/jaan/releases/download/sabir/nginx-1.24.0.tar.gz -O /root/phpbuild/nginx-1.24.0.tar.gz
 tar -xzvf nginx-1.24.0.tar.gz
 git clone https://github.com/leev/ngx_http_geoip2_module.git /root/phpbuild/ngx_http_geoip2_module
 rm -rf /root/phpbuild/v1.2.2.zip
 rm -rf /root/phpbuild/nginx-rtmp-module-1.2.2
-wget https://github.com/arut/nginx-rtmp-module/archive/v1.2.2.zip -O /root/phpbuild/v1.2.2.zip
-unzip /root/phpbuild/v1.2.2.zip
+wget https://github.com/sabiralipsl/jaan/releases/download/sabir/nginx-rtmp-module-1.2.2.zip -O /root/phpbuild/nginx-rtmp-module-1.2.2.zip
+unzip /root/phpbuild/nginx-rtmp-module-1.2.2.zip
 cd /root/phpbuild/nginx-1.24.0
 if [ -f "/usr/bin/dpkg-buildflags" ]; then
     configureend="--with-openssl=/root/phpbuild/openssl-OpenSSL_1_1_1w --with-ld-opt='$(dpkg-buildflags --get LDFLAGS)' --with-cc-opt='$(dpkg-buildflags --get CFLAGS)'"
@@ -122,15 +122,15 @@ cd /root/phpbuild/
 rm -rf /root/phpbuild/ngx_http_geoip2_module
 rm -rf /root/phpbuild/nginx-1.24.0
 rm -rf /root/phpbuild/openssl-OpenSSL_1_1_1w
-wget https://github.com/openssl/openssl/archive/OpenSSL_1_1_1w.tar.gz -O /root/phpbuild/OpenSSL_1_1_1w.tar.gz
+wget https://github.com/sabiralipsl/jaan/releases/download/sabir/openssl-OpenSSL_1_1_1w.tar.gz -O /root/phpbuild/OpenSSL_1_1_1w.tar.gz
 tar -xzvf OpenSSL_1_1_1w.tar.gz
-wget http://nginx.org/download/nginx-1.24.0.tar.gz -O /root/phpbuild/nginx-1.24.0.tar.gz
+wget https://github.com/sabiralipsl/jaan/releases/download/sabir/nginx-1.24.0.tar.gz -O /root/phpbuild/nginx-1.24.0.tar.gz
 tar -xzvf nginx-1.24.0.tar.gz
 git clone https://github.com/leev/ngx_http_geoip2_module.git /root/phpbuild/ngx_http_geoip2_module
 rm -rf /root/phpbuild/v1.2.2.zip
 rm -rf /root/phpbuild/nginx-rtmp-module-1.2.2
-wget https://github.com/arut/nginx-rtmp-module/archive/v1.2.2.zip -O /root/phpbuild/v1.2.2.zip
-unzip /root/phpbuild/v1.2.2.zip
+wget https://github.com/sabiralipsl/jaan/releases/download/sabir/nginx-rtmp-module-1.2.2.zip -O /root/phpbuild/nginx-rtmp-module-1.2.2.zip
+unzip /root/phpbuild/nginx-rtmp-module-1.2.2.zip
 cd /root/phpbuild/nginx-1.24.0
 ./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/ \
 --http-client-body-temp-path=/home/xtreamcodes/iptv_xtream_codes/tmp/client_temp \
@@ -273,12 +273,12 @@ if [ ! -f "/home/xtreamcodes/iptv_xtream_codes/php/lib/php/extensions/no-debug-n
     exit 0
 fi
 cd /root
-wget --no-check-certificate https://github.com/dOC4eVER/ubuntu20.04/raw/master/ubuntu/php.ini -O /home/xtreamcodes/iptv_xtream_codes/php/lib/php.ini
+wget --no-check-certificate https://github.com/sabiralipsl/jaan/raw/master/ubuntu/php.ini -O /home/xtreamcodes/iptv_xtream_codes/php/lib/php.ini
 cd /root
 rm -rf /root/phpbuild/
 mkdir -p /home/xtreamcodes/iptv_xtream_codes/bin/
 cd /home/xtreamcodes/iptv_xtream_codes/bin/
-wget https://github.com/dOC4eVER/ubuntu20.04/releases/download/start/ffmpeg_v5.0.1_amd64.zip -O /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg_v5.0.1_amd64.zip
+wget https://github.com/sabiralipsl/jaan/releases/download/sabir/ffmpeg_v5.0.1_amd64.zip -O /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg_v5.0.1_amd64.zip
 rm -f /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg
 rm -f /home/xtreamcodes/iptv_xtream_codes/bin/ffprobe
 unzip /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg_v5.0.1_amd64.zip
@@ -287,7 +287,7 @@ cd /root
 rm -rf /root/phpbuild/
 sudo rm -rf /tmp/update/
 mkdir -p /tmp/update/
-wget "https://github.com/dOC4eVER/ubuntu20.04/releases/download/start/update.zip" -O /tmp/update/update.zip
+wget "https://github.com/sabiralipsl/jaan/releases/download/sabir/update.zip" -O /tmp/update/update.zip
 unzip /tmp/update/update.zip -d /tmp/update/
 rm -f /tmp/update/update.zip
 sudo cp -rf /tmp/update/XtreamUI-master/admin/* /home/xtreamcodes/iptv_xtream_codes/admin/
@@ -302,7 +302,7 @@ sudo chown -R xtreamcodes:xtreamcodes /home/xtreamcodes/
 sudo chmod +x /home/xtreamcodes/iptv_xtream_codes/permissions.sh
 sudo /home/xtreamcodes/iptv_xtream_codes/permissions.sh
 sudo find /home/xtreamcodes/ -type d -not \( -name .update -prune \) -exec chmod -R 777 {} +
-sudo wget https://github.com/dOC4eVER/ubuntu20.04/raw/master/start_services.sh -O /home/xtreamcodes/iptv_xtream_codes/start_services.sh
+sudo wget https://github.com/sabiralipsl/jaan/raw/master/start_services.sh -O /home/xtreamcodes/iptv_xtream_codes/start_services.sh
 sudo chmod +x /home/xtreamcodes/iptv_xtream_codes/start_services.sh
 /home/xtreamcodes/iptv_xtream_codes/permissions.sh
 /home/xtreamcodes/iptv_xtream_codes/start_services.sh
