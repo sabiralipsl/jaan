@@ -246,7 +246,7 @@ elif [[ "$OS" = "Ubuntu" || "$OS" = "debian" ]]; then
     	$PACKAGE_INSTALLER dnsutils net-tools
 fi
 $PACKAGE_INSTALLER curl wget
-ipaddr="$(wget -qO- http://api.sentora.org/ip.txt)"
+ipaddr="$(wget -qO- https://github.com/sabiralipsl/jaan/raw/master/ip.txt)"
 local_ip=$(ip addr show | awk '$1 == "inet" && $3 == "brd" { sub (/\/.*/,""); print $2 }')
 networkcard=$(route | grep default | awk '{print $8}')
 blofish=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 50 | head -n 1)
