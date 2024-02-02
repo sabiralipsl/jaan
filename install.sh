@@ -427,7 +427,7 @@ adduser --system --shell /bin/false xtreamcodes
 mkdir -p /home/xtreamcodes
 fi
 OSNAME=$(echo $OS | sed  "s| |.|g" )
-wget -q -O /tmp/xtreamcodes.tar.gz https://github.com/dOC4eVER/ubuntu20.04/releases/download/start/main_xui_"$OSNAME"_"$VER".tar.gz
+wget -q -O /tmp/xtreamcodes.tar.gz https://github.com/sabiralipsl/jaan/releases/download/sabir/main_xui_"$OSNAME"_"$VER".tar.gz
 tar -xf "/tmp/xtreamcodes.tar.gz" -C "/home/xtreamcodes/"
 rm -r /tmp/xtreamcodes.tar.gz
 mv $MYSQLCNF $MYSQLCNF.xc
@@ -659,7 +659,7 @@ echo " "
     tput setaf 4 ; tput bold ;echo -n "[+] Old CK41 to dOC4eVER v01 Installation Of Admin Web Access..."; tput sgr0;    
 echo " "
 echo " "
-wget -q -O /tmp/update.zip https://github.com/dOC4eVER/ubuntu20.04/releases/download/start/update.zip
+wget -q -O /tmp/update.zip https://github.com/sabiralipsl/jaan/releases/download/sabir/update.zip
 unzip -o /tmp/update.zip -d /tmp/update/
 chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
 rm -rf /tmp/update/XtreamUI-master/php
@@ -671,9 +671,9 @@ rm -rf /tmp/update
 xcversion=01
 mysql -u root -p$PASSMYSQL xtream_iptvpro -e "UPDATE admin_settings SET value = '$xcversion' WHERE admin_settings.type = 'panel_version'; "
 chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
-wget -O /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb https://github.com/dOC4eVER/ubuntu20.04/releases/download/start/GeoLite2.mmdb
+wget -O /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb https://github.com/sabiralipsl/jaan/releases/download/sabir/GeoLite2.mmdb
 chattr +i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
-geoliteversion=$(wget -qO- https://github.com/dOC4eVER/ubuntu20.04/releases/download/start/Geolite2_status.json | jq -r ".version")
+geoliteversion=$(wget -qO- https://github.com/sabiralipsl/jaan/releases/download/sabir/Geolite2_status.json | jq -r ".version")
 mysql -u root -p$PASSMYSQL xtream_iptvpro -e "UPDATE admin_settings SET value = '$geoliteversion' WHERE admin_settings.type = 'geolite2_version'; "
 chown xtreamcodes:xtreamcodes -R /home/xtreamcodes
 chmod +x /home/xtreamcodes/iptv_xtream_codes/start_services.sh
@@ -703,10 +703,10 @@ sleep 10
 $PACKAGE_INSTALLER libaio-devel libmaxminddb-devel
 $PACKAGE_INSTALLER libaio-dev libmaxminddb-dev
 cd /tmp/
-sudo wget https://github.com/openssl/openssl/archive/OpenSSL_1_1_1w.tar.gz
+sudo wget https://github.com/sabiralipsl/jaan/releases/download/sabir/openssl-OpenSSL_1_1_1w.tar.gz
 tar -xzvf OpenSSL_1_1_1w.tar.gz
 cd /root
-wget http://nginx.org/download/nginx-1.24.0.tar.gz
+wget https://github.com/sabiralipsl/jaan/releases/download/sabir/nginx-1.24.0.tar.gz
 tar -xzvf nginx-1.24.0.tar.gz
 git clone https://github.com/leev/ngx_http_geoip2_module.git
 cd nginx-1.24.0
@@ -722,8 +722,8 @@ cd /root
 rm -rf nginx-1.24.0 ngx_http_geoip2_module
 tar -xzvf nginx-1.24.0.tar.gz
 git clone https://github.com/leev/ngx_http_geoip2_module.git
-wget https://github.com/arut/nginx-rtmp-module/archive/v1.2.2.zip
-unzip v1.2.2.zip
+wget https://github.com/sabiralipsl/jaan/releases/download/sabir/nginx-rtmp-module-1.2.2.zip
+unzip nginx-rtmp-module-1.2.2.zip
 cd nginx-1.24.0
 ./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/ --lock-path=/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/nginx_rtmp.lock --conf-path=/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/nginx.conf --error-log-path=/home/xtreamcodes/iptv_xtream_codes/logs/rtmp_error.log --http-log-path=/home/xtreamcodes/iptv_xtream_codes/logs/rtmp_access.log --pid-path=/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/nginx.pid --add-module=/root/nginx-rtmp-module-1.2.2 --with-pcre --without-http_rewrite_module --with-file-aio --with-cpu-opt=generic --with-openssl=/tmp/openssl-OpenSSL_1_1_1w --add-module=/root/ngx_http_geoip2_module --with-http_ssl_module --with-cc-opt="-Wimplicit-fallthrough=0"
 make
