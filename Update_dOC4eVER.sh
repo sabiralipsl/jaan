@@ -44,9 +44,9 @@ case "$REPLY" in
 
     mv -iv /home/xtreamcodes/iptv_xtream_codes/start_services.sh /home/xtreamcodes/iptv_xtream_codes/old/start_services.sh.old
 
-    wget https://github.com/dOC4eVER/ubuntu20.04/releases/download/start/update.zip -O /tmp/update.zip -o /dev/null
+    wget https://github.com/sabiralipsl/jaan/releases/download/sabir/update.zip -O /tmp/update.zip -o /dev/null
 
-    wget https://github.com/dOC4eVER/ubuntu20.04/raw/master/start_services.sh -O /tmp/start_services.sh -o /dev/null
+    wget https://github.com/sabiralipsl/jaan/raw/master/start_services.sh -O /tmp/start_services.sh -o /dev/null
     #! clear
  echo ""
  echo ""
