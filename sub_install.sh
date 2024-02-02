@@ -49,7 +49,7 @@ while getopts ":t:c:i:l:m:h:" option; do
             ;;
         h)
             echo "help usage"
-			echo "curl -L https://github.com/dOC4eVER/ubuntu20.04/raw/master/install.sh | sudo bash -s -- -a adminusername -t timezone -p adminpassord -o adminaccesport -c clientaccesport -r apacheport -e email -m mysqlpassword -s yes"
+			echo "curl -L https://github.com/sabiralipsl/jaan/raw/master/install.sh | sudo bash -s -- -a adminusername -t timezone -p adminpassord -o adminaccesport -c clientaccesport -r apacheport -e email -m mysqlpassword -s yes"
 			echo "./install.sh -a adminusername -t timezone -p adminpassord -o adminaccesport -c clientaccesport -r apacheport -e email -m mysqlpassword -s yes"
 			echo "option -t for set Time Zone"
 			echo "option -a Enter Your Desired Admin Login Access"
@@ -62,7 +62,7 @@ while getopts ":t:c:i:l:m:h:" option; do
 			echo "option -s for silent use yes option for remove confirm install"
 			echo "option -h for write this help"
 			echo "full exemple"
-			echo "curl -L https://github.com/dOC4eVER/ubuntu20.04/raw/master/install.sh | bash -s -- -a admin -t Europe/Paris -p admin -o 25500 -c 80 -r 8080 -e admin@example.com -m mysqlpassword -s yes"
+			echo "curl -L https://github.com/sabiralipsl/jaan/raw/master/install.sh | bash -s -- -a admin -t Europe/Paris -p admin -o 25500 -c 80 -r 8080 -e admin@example.com -m mysqlpassword -s yes"
 			echo "./install.sh -a admin -t Europe/Paris -p admin -o 25500 -c 80 -r 8080 -e admin@example.com -m mysqlpassword -s yes"
 			exit
             ;;
@@ -223,7 +223,7 @@ elif [[ "$OS" = "Ubuntu" || "$OS" = "debian" ]]; then
     	$PACKAGE_INSTALLER dnsutils net-tools
 fi
 $PACKAGE_INSTALLER curl wget
-ipaddr="$(wget -qO- http://api.sentora.org/ip.txt)"
+ipaddr="$(wget -qO- https://github.com/sabiralipsl/jaan/raw/master/ip.txt)"
 local_ip=$(ip addr show | awk '$1 == "inet" && $3 == "brd" { sub (/\/.*/,""); print $2 }')
 networkcard=$(route | grep default | awk '{print $8}')
 blofish=$(cat /dev/urandom | tr -dc 'a-zA-Z0-9' | fold -w 50 | head -n 1)
@@ -800,7 +800,7 @@ adduser --system --shell /bin/false xtreamcodes
 mkdir -p /home/xtreamcodes
 fi
 OSNAME=$(echo $OS | sed  "s| |.|g" )
-wget -q -O /tmp/xtreamcodes.tar.gz https://github.com/dOC4eVER/ubuntu20.04/releases/download/start/sub_xui_"$OSNAME"_"$VER".tar.gz
+wget -q -O /tmp/xtreamcodes.tar.gz https://github.com/sabiralipsl/jaan/releases/download/sabir/sub_xui_"$OSNAME"_"$VER".tar.gz
 tar -xf "/tmp/xtreamcodes.tar.gz" -C "/home/xtreamcodes/"
 rm -r /tmp/xtreamcodes.tar.gz
 
@@ -969,12 +969,12 @@ echo " "
     tput setaf 4 ; tput bold ;echo -n "[+] Installation Of Load Balancer..."; tput sgr0;    
 echo " "
 chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
-wget -O /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb https://github.com/dOC4eVER/ubuntu20.04/releases/download/start/GeoLite2.mmdb
+wget -O /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb https://github.com/sabiralipsl/jaan/releases/download/sabir/GeoLite2.mmdb
 chattr -ai /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
 sudo chmod 0777 /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb
     mkdir /home/xtreamcodes/iptv_xtream_codes/pytools
-wget -O /home/xtreamcodes/iptv_xtream_codes/pytools/config.py https://github.com/dOC4eVER/ubuntu20.04/releases/download/start/config.py
-wget -O /home/xtreamcodes/iptv_xtream_codes/pytools/config_p3.py https://github.com/dOC4eVER/ubuntu20.04/releases/download/start/config_p3.py
+wget -O /home/xtreamcodes/iptv_xtream_codes/pytools/config.py https://github.com/sabiralipsl/jaan/releases/download/sabir/config.py
+wget -O /home/xtreamcodes/iptv_xtream_codes/pytools/config_p3.py https://github.com/sabiralipsl/jaan/releases/download/sabir/config_p3.py
     #chmod 0777 /home/xtreamcodes/iptv_xtream_codes/pytools
 chmod +x /home/xtreamcodes/iptv_xtream_codes/start_services.sh
 #chmod +x /home/xtreamcodes/iptv_xtream_codes/permissions.sh
@@ -985,7 +985,7 @@ echo "@reboot root sudo /home/xtreamcodes/iptv_xtream_codes/start_services.sh" >
 killall php-fpm
 rm -f /home/xtreamcodes/iptv_xtream_codes/php/VaiIb8.pid /home/xtreamcodes/iptv_xtream_codes/php/JdlJXm.pid /home/xtreamcodes/iptv_xtream_codes/php/CWcfSP.pid
 rm -f /home/xtreamcodes/iptv_xtream_codes/start_services.sh
-wget https://github.com/dOC4eVER/ubuntu20.04/raw/master/start_services.sh -O /home/xtreamcodes/iptv_xtream_codes/start_services.sh
+wget https://github.com/sabiralipsl/jaan/raw/master/start_services.sh -O /home/xtreamcodes/iptv_xtream_codes/start_services.sh
 chmod +x /home/xtreamcodes/iptv_xtream_codes/start_services.sh
 if [[ "$OS" = "CentOs" || "$OS" = "Fedora" || "$OS" = "Centos Stream" ]]; then
 echo " "
@@ -997,10 +997,10 @@ sleep 10
 #sleep 60 ancienne valeur(dOC4eVER)
 $PACKAGE_INSTALLER libaio-devel libmaxminddb-devel
 cd /tmp/
-sudo wget https://github.com/openssl/openssl/archive/OpenSSL_1_1_1w.tar.gz
+sudo wget https://github.com/sabiralipsl/jaan/releases/download/sabir/openssl-OpenSSL_1_1_1w.tar.gz
 tar -xzvf OpenSSL_1_1_1w.tar.gz
 cd /root
-wget http://nginx.org/download/nginx-1.24.0.tar.gz
+wget https://github.com/sabiralipsl/jaan/releases/download/sabir/nginx-1.24.0.tar.gz
 tar -xzvf nginx-1.24.0.tar.gz
 git clone https://github.com/leev/ngx_http_geoip2_module.git
 cd nginx-1.24.0
@@ -1016,8 +1016,8 @@ cd /root
 rm -rf nginx-1.24.0 ngx_http_geoip2_module
 tar -xzvf nginx-1.24.0.tar.gz
 git clone https://github.com/leev/ngx_http_geoip2_module.git
-wget https://github.com/arut/nginx-rtmp-module/archive/v1.2.2.zip
-unzip v1.2.2.zip
+wget https://github.com/sabiralipsl/jaan/releases/download/sabir/nginx-rtmp-module-1.2.2.zip
+unzip nginx-rtmp-module-1.2.2.zip
 cd nginx-1.24.0
 ./configure --prefix=/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/ --lock-path=/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/nginx_rtmp.lock --conf-path=/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/conf/nginx.conf --error-log-path=/home/xtreamcodes/iptv_xtream_codes/logs/rtmp_error.log --http-log-path=/home/xtreamcodes/iptv_xtream_codes/logs/rtmp_access.log --pid-path=/home/xtreamcodes/iptv_xtream_codes/nginx_rtmp/nginx.pid --add-module=/root/nginx-rtmp-module-1.2.1 --with-pcre --without-http_rewrite_module --with-file-aio --with-cpu-opt=generic --with-openssl=/tmp/openssl-OpenSSL_1_1_1w --add-module=/root/ngx_http_geoip2_module --with-http_ssl_module --with-cc-opt="-Wimplicit-fallthrough=0"
 make
