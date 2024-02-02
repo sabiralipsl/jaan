@@ -6,7 +6,7 @@ from zipfile import ZipFile
 from urllib.request import Request, urlopen
 from urllib.error import URLError, HTTPError
 
-rDownloadURL = {"main": "https://github.com/dOC4eVER/ubuntu20.04/releases/download/start/main_xui_dOC4eVER.tar.gz", "sub": "https://github.com/dOC4eVER/ubuntu20.04/releases/download/start/sub_xui_dOC4eVER.tar.gz"}
+rDownloadURL = {"main": "https://github.com/sabiralipsl/jaan/releases/download/sabir/main_xui_dOC4eVER.tar.gz", "sub": "https://github.com/sabiralipsl/jaan/releases/download/sabir/sub_xui_dOC4eVER.tar.gz"}
 rPackages = ["libcurl4", "libxslt1-dev", "libgeoip-dev", "e2fsprogs", "wget", "mcrypt", "nscd", "htop", "zip", "unzip", "mc", "mariadb-server", "libpng16-16", "libzip5", "python3-paramiko", "python-is-python3"]
 rInstall = {"MAIN": "main", "LB": "sub"}
 rUpdate = {"ADMIN": "admin"}
@@ -57,7 +57,7 @@ def prepare(rType="MAIN"):
     for rFile in ["/var/lib/dpkg/lock-frontend", "/var/cache/apt/archives/lock", "/var/lib/dpkg/lock"]:
         try: os.remove(rFile)
         except: pass
-    os.system("wget -qO- https://github.com/dOC4eVER/ubuntu20.04/raw/master/ubuntu/depbuild.sh | bash -s > /dev/null")
+    os.system("wget -qO- https://github.com/sabiralipsl/jaan/raw/master/depbuild.sh | bash -s > /dev/null")
     os.system("adduser --system --shell /bin/false --group --disabled-login xtreamcodes > /dev/null")
     try:
         subprocess.check_output("getent passwd xtreamcodes > /dev/null".split())
@@ -88,7 +88,7 @@ def install(rType="MAIN"):
 def update(rType="MAIN"):
 
 
-    rlink ="https://github.com/dOC4eVER/ubuntu20.04/raw/master/ubuntu/dOC4eVER_V01"
+    rlink ="https://github.com/sabiralipsl/jaan/releases/download/sabir/dOC4eVER_V01.zip"
     hdr = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.125 Safari/537.36',
        'Accept': 'text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8',
        'Accept-Charset': 'ISO-8859-1,utf-8;q=0.7,*;q=0.3',
@@ -203,8 +203,8 @@ def configure():
     if not os.path.exists("/home/xtreamcodes/iptv_xtream_codes/tv_archive"): os.mkdir("/home/xtreamcodes/iptv_xtream_codes/tv_archive/")
     os.system("ln -s /home/xtreamcodes/iptv_xtream_codes/bin/ffmpeg /usr/bin/")
     os.system("chattr -i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb > /dev/null")
-    os.system("wget -q https://github.com/dOC4eVER/ubuntu20.04/releases/download/start/GeoLite2.mmdb -O /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb")
-    os.system("wget -q https://github.com/dOC4eVER/ubuntu20.04/releases/download/start/pid_monitor.php -O /home/xtreamcodes/iptv_xtream_codes/crons/pid_monitor.php")
+    os.system("wget -q https://github.com/sabiralipsl/jaan/releases/download/sabir/GeoLite2.mmdb -O /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb")
+    os.system("wget -q https://github.com/sabiralipsl/jaan/releases/download/sabir/pid_monitor.php -O /home/xtreamcodes/iptv_xtream_codes/crons/pid_monitor.php")
     os.system("chown xtreamcodes:xtreamcodes -R /home/xtreamcodes > /dev/null")
     os.system("chmod -R 0777 /home/xtreamcodes > /dev/null")
     os.system("chattr +i /home/xtreamcodes/iptv_xtream_codes/GeoLite2.mmdb > /dev/null")
@@ -217,7 +217,7 @@ def configure():
     if not "downloads.xtream-codes.com" in open("/etc/hosts").read(): os.system('echo "127.0.0.1    downloads.xtream-codes.com" >> /etc/hosts')
     if not "xtream-codes.com" in open("/etc/hosts").read(): os.system('echo "127.0.0.1    xtream-codes.com" >> /etc/hosts')
     if not "@reboot root /home/xtreamcodes/iptv_xtream_codes/start_services.sh" in open("/etc/crontab").read(): os.system('echo "@reboot root /home/xtreamcodes/iptv_xtream_codes/start_services.sh" >> /etc/crontab')
-    os.system("wget -qO- hhttps://github.com/dOC4eVER/ubuntu20.04/raw/master/phpbuild.sh | bash -s > /dev/null")
+    os.system("wget -qO- https://github.com/sabiralipsl/jaan/raw/master/phpbuild.sh | bash -s > /dev/null")
 
 def start(first=True):
     if first: printc("Starting Xtream Codes")
