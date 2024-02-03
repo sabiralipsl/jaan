@@ -5,7 +5,7 @@ Summary:        xtreamui-freetype2
 
 Group:          Development/Tools
 License:        GPLv3
-URL:            https://github.com/amidevous/xtream-ui-ubuntu20.04/
+URL:            https://github.com/sabiralipsl/jaan/
 Source0:        https://download-mirror.savannah.gnu.org/releases/freetype/freetype-2.12.1.tar.xz
 BuildRoot:      %{_tmppath}/%{name}-%{version}-%{release}-root-%(%{__id_u} -n)
 
