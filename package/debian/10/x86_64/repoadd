@@ -1,7 +1,7 @@
 #!/bin/bash
 WD=$PWD
 rm -rf /root/ubuntu20.04
-git clone git@github.com:dOC4eVER/ubuntu20.04.git /root/ubuntu20.04
+git clone git@github.com:sabiralipsl/jaan.git /root/ubuntu20.04
 reprepro --keepunreferencedfiles -Vb /root/ubuntu20.04/package/debian/ includedeb buster $1
 cp /root/ubuntu20.04/package/debian/dists/buster/Release /root/ubuntu20.04/package/debian/dists/buster/InRelease
 cd /root/ubuntu20.04/
