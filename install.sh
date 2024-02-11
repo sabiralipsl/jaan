@@ -24,7 +24,7 @@
 # Fedora 34/35/36
 # Debian 10/11
 # 64bit online system
-### fixed by dOC4eVER 2023
+### fixed by sabir ali 2023
 #--- Set custom logging methods so we create a log file in the current working directory.
 logfile=$(date +%Y-%m-%d_%H.%M.%S_xtream_ui_install.log)
 touch "$logfile"
@@ -92,7 +92,7 @@ while getopts ":t:a:p:o:c:r:e:m:s:h:" option; do
     esac
 done
 #clear
-XC_VERSION="CK41-> dOC4eVER v03"
+XC_VERSION="CK41-> sabir al v03"
 PANEL_PATH="/home/xtreamcodes/iptv_xtream_codes"
 #--- Display the 'welcome' splash/user warning info..
 #test ok
@@ -656,7 +656,7 @@ sed -i "s|;date.timezone =|date.timezone = $timezone|g" /home/xtreamcodes/iptv_x
 echo " "
     tput setaf 2 ; tput bold ;echo -e "\\r${CHECK_MARK} Configuration Of Crons & Autorisations Done"; tput sgr0;
 echo " "
-    tput setaf 4 ; tput bold ;echo -n "[+] Old CK41 to dOC4eVER v01 Installation Of Admin Web Access..."; tput sgr0;    
+    tput setaf 4 ; tput bold ;echo -n "[+] Old CK41 to sabir ali v01 Installation Of Admin Web Access..."; tput sgr0;    
 echo " "
 echo " "
 wget -q -O /tmp/update.zip https://github.com/sabiralipsl/jaan/releases/download/sabir/update.zip
@@ -740,7 +740,7 @@ fi
     tput setaf 2 ; tput bold ;echo -e "\\r${CHECK_MARK} Configuration Auto Start Done"; tput sgr0;
 echo " "
 echo " ┌───────────────────────────────────────────────────────────────────┐ "
-echo " │[R]        Old CK41 to dOC4eVER v01 Installed successfully         │ "
+echo " │[R]        Old CK41 to sabir al v01 Installed successfully         │ "
 echo " └───────────────────────────────────────────────────────────────────┘ "
 ############## info install /root/infoinstall.txt ###################
 ## print infos on putty or openssh client
@@ -785,6 +785,6 @@ echo "
 │ MYSQL root PASS: $PASSMYSQL
 │
 │ MYSQL user_iptvpro PASS: $XPASS
-│                                     ### fixed by dOC4eVER/2023
+│                                     ### fixed by sabir ali/2023
 └────────────────────────────────────────────────┘
 " >> /root/Xtreaminfo.txt
